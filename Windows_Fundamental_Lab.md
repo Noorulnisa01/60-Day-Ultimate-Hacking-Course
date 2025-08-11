@@ -1,13 +1,10 @@
-
-
-
 ![Windows](https://w0.peakpx.com/wallpaper/828/1004/HD-wallpaper-windows-glowing-logo-blue-windows-computer-logo.jpg)
 
 ---
+# 💻 ***Windows Fundamentals – Complete Notes & Lab ( Definitions & Practice )***
 
-# 💻 *Windows Fundamentals – Complete Notes & Lab ( Definitions & Practice )*
-
-> *Comprehensive definitions, practice questions, and step-by-step ***labs for mastering Windows*** security, administration, and system management.*
+> ***Descripton:*** 
+> - *Comprehensive definitions, practice questions, and step-by-step ***labs for mastering Windows*** security, administration, and system management.*
 
 - ***Windows Fundamentals 1 – Tasks 1 to 9***
 
@@ -16,16 +13,14 @@
 - ***Windows Fundamentals 3 - Tasks 1 to 9***
 
 
+> ### ***Instructor:***
+- ***Syed Ramzan Bukhari***
 
->***Learning Source:***  
+> ### ***YouTube Channel:***
+- ***The House of Hackers***
+
+> ### ***Learning Source:***  
 - ***TryHackMe***
-
-![](data:image/png;base64,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)
-
-<div style="page-break-after: always;"></div>
-
-
-
 
 ---
 
