@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Windows_Fundamentals_1_Tasks_1_to_4 (1).md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><img src="https://w0.peakpx.com/wallpaper/828/1004/HD-wallpaper-windows-glowing-logo-blue-windows-computer-logo.jpg" alt="Windows"></p>
+<hr>
+<h1 id="%F0%9F%92%BB-windows-fundamentals-%E2%80%93-complete-notes--lab--definitions--practice">💻 <em>Windows Fundamentals – Complete Notes &amp; Lab ( Definitions &amp; Practice )</em></h1>
+<blockquote>
+<p><em>Comprehensive definitions, practice questions, and step-by-step <em><strong>labs for mastering Windows</strong></em> security, administration, and system management.</em></p>
+</blockquote>
+<ul>
+<li>
+<p><em><strong>Windows Fundamentals 1 – Tasks 1 to 9</strong></em></p>
+</li>
+<li>
+<p><em><strong>Window Fundamentals 2 - Tasks 1 to 8</strong></em></p>
+</li>
+<li>
+<p><em><strong>Windows Fundamentals 3 - Tasks 1 to 9</strong></em></p>
+</li>
+</ul>
+<blockquote>
+<p><em><strong>Learning Source:</strong></em></p>
+</blockquote>
+<ul>
+<li><em><strong>TryHackMe</strong></em></li>
+</ul>
+<p><img src="data:image/png;base64,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" alt=""></p>
+<div style="page-break-after: always;"></div>
+<hr>
+<blockquote>
+<h2 id="%F0%9F%93%9D-windows-fundamentals-1-%E2%80%93-tasks-1-to-9-complete-lab">📝 <em><strong>Windows Fundamentals 1 – Tasks 1 to 9 (Complete lab)</strong></em></h2>
+</blockquote>
+<hr>
+<h3 id="%E2%9C%85-task-1-introduction-to-windows">✅ <em><strong>Task 1: Introduction to Windows</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Windows</strong></em> is a <em>graphical operating system</em> developed by <em><strong>Microsoft</strong></em>.</p>
+</blockquote>
+<ul>
+<li>It allows users to <em><strong>manage hardware and software</strong></em> using a visual interface.</li>
+<li>It <em><strong>supports</strong></em> multitasking, file management, user authentication, and system utilities.</li>
+</ul>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: What is the purpose of an operating system like Windows?</strong><br>
+<strong>A:</strong> It acts as an <code>interface between</code> the user and hardware, managing resources, applications, memory, and user input/output.</p>
+<p><strong>Q2: How do you check the Windows version installed?</strong><br>
+<strong>A:</strong> Use <code>winver</code> in the Run dialog (Windows + R) or type <code>msinfo32</code> for detailed system info.</p>
+<p><strong>Q3: What type of user interface does Windows provide?</strong><br>
+<strong>A:</strong> Graphical User Interface (GUI)</p>
+<p><strong>Q4: How do you open the Command Prompt in Windows?</strong><br>
+<strong>A:</strong> Press <code>Windows + R</code>, type <code>cmd</code>, and press Enter.</p>
+<p><strong>Q5: What is NTFS?</strong><br>
+<strong>A:</strong> New Technology File System – used by Windows for secure and efficient file storage.</p>
+<p><strong>Q6: Which utility shows complete system hardware and OS details?</strong><br>
+<strong>A:</strong> System Information – <code>msinfo32</code></p>
+<p><strong>Q7: What key combination opens Task Manager?</strong><br>
+<strong>A:</strong> <code>Ctrl + Shift + Esc</code></p>
+<p><strong>Q8: How do you shut down or restart the system using CMD?</strong><br>
+<strong>A:</strong> Use <code>shutdown /s</code> to shut down and <code>shutdown /r</code> to restart.</p>
+<p><strong>Q9: How can you open Windows Settings quickly?</strong><br>
+<strong>A:</strong> <code>Windows + I</code></p>
+<p><strong>Q10: What distinguishes Windows from command-line-based systems?</strong><br>
+<strong>A:</strong> It provides a GUI that simplifies operations through clicks and menus instead of typed commands.</p>
+<hr>
+<h3 id="%E2%9C%85-task-2-windows-editions">✅ <em><strong>Task 2: Windows Editions</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Windows</strong></em> comes in different editions such as <code>Home, Pro, Enterprise, and Education</code>.</p>
+</blockquote>
+<ul>
+<li>Each tailored for different users and organizations with varied features and capabilities.</li>
+</ul>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How can you check which edition of Windows is installed?</strong><br>
+<strong>A:</strong> Open Run (<code>Windows + R</code>), type <code>winver</code>, or go to <code>Settings &gt; System &gt; About</code>.</p>
+<p><strong>Q2: What feature is available in Windows Pro but not in Home?</strong><br>
+<strong>A:</strong> BitLocker, Group Policy Editor, and Remote Desktop are Pro-exclusive.</p>
+<p><strong>Q3: Can Windows Home be upgraded to Pro?</strong><br>
+<strong>A:</strong> Yes, through the Microsoft Store or by entering a Pro license key.</p>
+<p><strong>Q4: What is the purpose of Windows Enterprise edition?</strong><br>
+<strong>A:</strong> Designed for large organizations with advanced security, virtualization, and IT management features.</p>
+<p><strong>Q5: Which edition is optimized for low-end devices or embedded systems?</strong><br>
+<strong>A:</strong> Windows 10/11 IoT</p>
+<p><strong>Q6: What is the main use of Windows Education edition?</strong><br>
+<strong>A:</strong> It provides Pro features tailored for schools and academic institutions.</p>
+<p><strong>Q7: Is Group Policy Editor available in Windows Home?</strong><br>
+<strong>A:</strong> No, it's only available in Pro and above.</p>
+<p><strong>Q8: What is the default edition for most personal laptops?</strong><br>
+<strong>A:</strong> Windows Home</p>
+<p><strong>Q9: How can you upgrade from Education to Enterprise?</strong><br>
+<strong>A:</strong> Through Volume Licensing or using an Enterprise product key.</p>
+<p><strong>Q10: Which edition is best for server use?</strong><br>
+<strong>A:</strong> Windows Server (separate from desktop editions)</p>
+<hr>
+<h3 id="%E2%9C%85-task-3-the-desktop-gui">✅ <em><strong>Task 3: The Desktop (GUI)</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p>The <em><strong>Desktop</strong></em> is the <em>primary interface</em> of Windows where users interact with icons, open applications, manage files, and access the taskbar, Start menu, and system tray.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: What keyboard shortcut shows the desktop instantly?</strong><br>
+<strong>A:</strong> <code>Windows + D</code></p>
+<p><strong>Q2: How do you open Task View for multitasking?</strong><br>
+<strong>A:</strong> <code>Windows + Tab</code></p>
+<p><strong>Q3: How can you lock your PC instantly?</strong><br>
+<strong>A:</strong> <code>Windows + L</code></p>
+<p><strong>Q4: Which shortcut opens File Explorer directly?</strong><br>
+<strong>A:</strong> <code>Windows + E</code></p>
+<p><strong>Q5: How do you pin an app to the taskbar?</strong><br>
+<strong>A:</strong> Right-click the app icon &gt; “Pin to taskbar”</p>
+<p><strong>Q6: How do you access the notification panel?</strong><br>
+<strong>A:</strong> <code>Windows + A</code> or click the notification icon in the system tray.</p>
+<p><strong>Q7: How can you search for apps, files, or settings from the desktop?</strong><br>
+<strong>A:</strong> Click Start and type directly into the search bar.</p>
+<p><strong>Q8: What is the system tray and what does it show?</strong><br>
+<strong>A:</strong> Located at the bottom-right, it shows background app icons, time, volume, and notifications.</p>
+<p><strong>Q9: How do you snap a window to the side of the screen?</strong><br>
+<strong>A:</strong> Drag it to the edge or use <code>Windows + Left/Right Arrow</code>.</p>
+<p><strong>Q10: How do you switch between open apps quickly?</strong><br>
+<strong>A:</strong> Press <code>Alt + Tab</code></p>
+<hr>
+<h3 id="%E2%9C%85-task-4-the-file-system">✅ <em><strong>Task 4: The File System</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p>The <em><strong>file system</strong></em> in Windows is the <em>method by which data is stored and organized on drives</em>.</p>
+</blockquote>
+<ul>
+<li>Windows primarily uses <em><strong>NTFS</strong></em> (New Technology File System), which supports file permissions, encryption, and compression.</li>
+</ul>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: What is NTFS and why is it important?</strong><br>
+<strong>A:</strong> NTFS (New Technology File System) is the default Windows file system that provides support for large files, file permissions, encryption, and efficient storage management.</p>
+<p><strong>Q2: How can you view the contents of a directory from CMD?</strong><br>
+<strong>A:</strong> Use the command <code>dir</code></p>
+<p><strong>Q3: What is the command to change directories?</strong><br>
+<strong>A:</strong> Use <code>cd foldername</code> (e.g., <code>cd Documents</code>)</p>
+<p><strong>Q4: How do you create a new folder using CMD?</strong><br>
+<strong>A:</strong> Use <code>mkdir foldername</code> (e.g., <code>mkdir MyFolder</code>)</p>
+<p><strong>Q5: How do you delete a file using CMD?</strong><br>
+<strong>A:</strong> Use <code>del filename</code> (e.g., <code>del notes.txt</code>)</p>
+<p><strong>Q6: How do you copy a file from one location to another?</strong><br>
+<strong>A:</strong> Use <code>copy source destination</code> (e.g., <code>copy a.txt D:\Backup</code>)</p>
+<p><strong>Q7: How do you move a file using command line?</strong><br>
+<strong>A:</strong> Use <code>move source destination</code> (e.g., <code>move a.txt D:\Files</code>)</p>
+<p><strong>Q8: What is the command to view all logical drives?</strong><br>
+<strong>A:</strong> Use <code>wmic logicaldisk get name</code></p>
+<p><strong>Q9: How can you make hidden files visible in File Explorer?</strong><br>
+<strong>A:</strong> Go to <code>View &gt; Show &gt; Hidden items</code></p>
+<p><strong>Q10: How do you copy the full path of a file in GUI?</strong><br>
+<strong>A:</strong> Hold <code>Shift + Right-click</code> on the file &gt; Select “Copy as path”</p>
+<hr>
+<h3 id="%E2%9C%85-task-5-the-windowssystem32-folder">✅ <em><strong>Task 5: The Windows\System32 Folder</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><code>C:\Windows\System32</code> contains critical system files, executables, drivers, and libraries required for Windows to function properly.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: What is the role of the System32 folder?</strong><br>
+<strong>A:</strong> It holds system-critical files such as <code>.dll</code>, <code>.exe</code>, and <code>.sys</code>, which are required to run Windows services and features.</p>
+<p><strong>Q2: How do you open the System32 folder directly?</strong><br>
+<strong>A:</strong> Press <code>Windows + R</code>, type <code>C:\Windows\System32</code>, and press Enter.</p>
+<p><strong>Q3: Which command-line tool is located in System32 to open the registry?</strong><br>
+<strong>A:</strong> <code>regedit.exe</code></p>
+<p><strong>Q4: How do you verify the integrity of files in System32?</strong><br>
+<strong>A:</strong> Use <code>sfc /scannow</code> in Command Prompt (admin mode).</p>
+<p><strong>Q5: What does <code>cmd.exe</code> do and where is it located?</strong><br>
+<strong>A:</strong> It opens the Command Prompt and is located in System32.</p>
+<p><strong>Q6: Name a System32 tool used for process management.</strong><br>
+<strong>A:</strong> <code>taskmgr.exe</code> opens Task Manager.</p>
+<p><strong>Q7: What happens if you delete files from System32?</strong><br>
+<strong>A:</strong> The system may become unbootable or highly unstable.</p>
+<p><strong>Q8: How can you list <code>.dll</code> files in System32 via CMD?</strong><br>
+<strong>A:</strong> <code>dir C:\Windows\System32\*.dll /b</code></p>
+<p><strong>Q9: What is the purpose of <code>services.exe</code> in System32?</strong><br>
+<strong>A:</strong> Manages starting/stopping of system services.</p>
+<p><strong>Q10: Command to check if System32 is being redirected on 64-bit OS?</strong><br>
+<strong>A:</strong> Use <code>echo %windir%\System32</code></p>
+<hr>
+<h3 id="%E2%9C%85-task-6-user-accounts-profiles-and-permissions">✅ <em><strong>Task 6: User Accounts, Profiles, and Permissions</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p>Windows allows <em><strong>multiple user accounts</strong></em> with unique profiles. Permissions define access rights to files, folders, and system tasks.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to create a new local user via command line?</strong><br>
+<strong>A:</strong> <code>net user username password /add</code></p>
+<p><strong>Q2: How to check your current username?</strong><br>
+<strong>A:</strong> <code>whoami</code></p>
+<p><strong>Q3: What is a user profile?</strong><br>
+<strong>A:</strong> It's a folder with a user's desktop, documents, and settings (<code>C:\Users\Username</code>).</p>
+<p><strong>Q4: Command to check all users on the system?</strong><br>
+<strong>A:</strong> <code>net user</code></p>
+<p><strong>Q5: How to open Local Users and Groups manager?</strong><br>
+<strong>A:</strong> Run <code>lusrmgr.msc</code> (Not available in Home edition)</p>
+<p><strong>Q6: What does NTFS stand for and why is it important?</strong><br>
+<strong>A:</strong> New Technology File System — it supports permissions and encryption.</p>
+<p><strong>Q7: How to view file permissions in GUI?</strong><br>
+<strong>A:</strong> Right-click file &gt; Properties &gt; Security tab</p>
+<p><strong>Q8: How to view access control list via command line?</strong><br>
+<strong>A:</strong> <code>icacls filename</code></p>
+<p><strong>Q9: Which command adds a user to the Administrators group?</strong><br>
+<strong>A:</strong> <code>net localgroup administrators username /add</code></p>
+<p><strong>Q10: What is the SID in Windows?</strong><br>
+<strong>A:</strong> Security Identifier — uniquely identifies users and groups.</p>
+<hr>
+<h3 id="%E2%9C%85-task-7-user-account-control-uac">✅ <em><strong>Task 7: User Account Control (UAC)</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>UAC</strong></em> is a <em>Windows security feature</em> that prevents unauthorized changes to the system by requiring admin approval.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to open UAC settings?</strong><br>
+<strong>A:</strong> <code>Control Panel &gt; User Accounts &gt; Change UAC settings</code> or run <code>UserAccountControlSettings.exe</code></p>
+<p><strong>Q2: What does UAC protect against?</strong><br>
+<strong>A:</strong> Unauthorized system changes by malware or users without admin rights.</p>
+<p><strong>Q3: How to disable UAC via registry?</strong><br>
+<strong>A:</strong> Set <code>EnableLUA</code> to <code>0</code> in <code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</code></p>
+<p><strong>Q4: UAC setting to never notify?</strong><br>
+<strong>A:</strong> Lowest level in UAC slider.</p>
+<p><strong>Q5: Command to force run a program as administrator?</strong><br>
+<strong>A:</strong> Right-click &gt; Run as Administrator</p>
+<p><strong>Q6: What’s the command to open Control Panel directly?</strong><br>
+<strong>A:</strong> <code>control</code></p>
+<p><strong>Q7: What happens when UAC is triggered?</strong><br>
+<strong>A:</strong> A prompt appears for admin approval before proceeding.</p>
+<p><strong>Q8: Which tool audits UAC events?</strong><br>
+<strong>A:</strong> <code>Event Viewer &gt; Security Logs</code></p>
+<p><strong>Q9: Does UAC block unsigned apps?</strong><br>
+<strong>A:</strong> It prompts, but does not automatically block.</p>
+<p><strong>Q10: Can UAC be bypassed?</strong><br>
+<strong>A:</strong> Yes, but it requires exploiting misconfigurations or vulnerabilities.</p>
+<hr>
+<h3 id="%E2%9C%85-task-8-settings-and-the-control-panel">✅ <em><strong>Task 8: Settings and the Control Panel</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Settings and Control Panel</strong></em> are interfaces to manage system settings such as accounts, network, devices, and updates.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to open Control Panel?</strong><br>
+<strong>A:</strong> Run <code>control</code> or search in Start.</p>
+<p><strong>Q2: Command to open Device Manager from CMD?</strong><br>
+<strong>A:</strong> <code>devmgmt.msc</code></p>
+<p><strong>Q3: What is the difference between Control Panel and Settings?</strong><br>
+<strong>A:</strong> Control Panel is legacy; Settings is the modern interface introduced in Windows 10.</p>
+<p><strong>Q4: How to open Network settings?</strong><br>
+<strong>A:</strong> <code>Start &gt; Settings &gt; Network &amp; Internet</code> or <code>ncpa.cpl</code></p>
+<p><strong>Q5: Command to open Programs and Features?</strong><br>
+<strong>A:</strong> <code>appwiz.cpl</code></p>
+<p><strong>Q6: How to change display resolution?</strong><br>
+<strong>A:</strong> <code>Settings &gt; Display &gt; Resolution</code></p>
+<p><strong>Q7: Command to open System Properties window?</strong><br>
+<strong>A:</strong> <code>sysdm.cpl</code></p>
+<p><strong>Q8: Command to access power settings?</strong><br>
+<strong>A:</strong> <code>powercfg.cpl</code></p>
+<p><strong>Q9: How to check installed updates via GUI?</strong><br>
+<strong>A:</strong> <code>Settings &gt; Windows Update &gt; Update history</code></p>
+<p><strong>Q10: Tool to uninstall system apps?</strong><br>
+<strong>A:</strong> <code>Control Panel &gt; Programs and Features</code> or use PowerShell for advanced removal.</p>
+<hr>
+<h3 id="%E2%9C%85-task-9-task-manager">✅ <em><strong>Task 9: Task Manager</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Task Manager</strong></em> is a tool to monitor running processes, system performance, app history, and startup programs.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em>*</p>
+<p><strong>Q1: Shortcut to open Task Manager?</strong><br>
+<strong>A:</strong> <code>Ctrl + Shift + Esc</code></p>
+<p><strong>Q2: Command to launch Task Manager from Run?</strong><br>
+<strong>A:</strong> <code>taskmgr</code></p>
+<p><strong>Q3: How to kill a process using Task Manager?</strong><br>
+<strong>A:</strong> Right-click &gt; End Task</p>
+<p><strong>Q4: How to view CPU and RAM usage?</strong><br>
+<strong>A:</strong> Use the “Performance” tab in Task Manager.</p>
+<p><strong>Q5: Command-line way to kill a process?</strong><br>
+<strong>A:</strong> <code>taskkill /IM notepad.exe /F</code></p>
+<p><strong>Q6: What is the purpose of the Startup tab?</strong><br>
+<strong>A:</strong> Manage apps that run at Windows startup.</p>
+<p><strong>Q7: How to run a new task from Task Manager?</strong><br>
+<strong>A:</strong> File &gt; Run new task</p>
+<p><strong>Q8: What’s the difference between a process and a service?</strong><br>
+<strong>A:</strong> A process is a running instance of an app; services run in background with no UI.</p>
+<p><strong>Q9: Can Task Manager monitor GPU usage?</strong><br>
+<strong>A:</strong> Yes, in the Performance tab (Windows 10+).</p>
+<p><strong>Q10: How to access services from Task Manager?</strong><br>
+<strong>A:</strong> Services tab &gt; Right-click &gt; Go to Services</p>
+<hr>
+<hr>
+<blockquote>
+<h2 id="%F0%9F%93%9D-windows-fundamentals-2-%E2%80%93-tasks-1-to-8-complete-lab">📝 <em><strong>Windows Fundamentals 2 – Tasks 1 to 8 (Complete Lab)</strong></em></h2>
+</blockquote>
+<hr>
+<h3 id="%E2%9C%85-task-1-introduction">✅ <em><strong>Task 1: Introduction</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Windows Fundamentals 2</strong></em>  <code>focuses</code> on system configuration, management tools, and administrative tasks.</p>
+</blockquote>
+<ul>
+<li>It builds foundational knowledge for managing Windows at a deeper level.</li>
+</ul>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: What does Windows Fundamentals 2 cover?</strong><br>
+<strong>A:</strong> System configuration, resource monitoring, command-line tools, and administrative utilities.</p>
+<p><strong>Q2: Name one important GUI tool for system management.</strong><br>
+<strong>A:</strong> Computer Management (<code>compmgmt.msc</code>)</p>
+<p><strong>Q3: Which Windows feature monitors system performance in real time?</strong><br>
+<strong>A:</strong> Resource Monitor</p>
+<p><strong>Q4: How to open the Command Prompt as administrator?</strong><br>
+<strong>A:</strong> Right-click CMD &gt; “Run as administrator”</p>
+<p><strong>Q5: What is System Configuration used for?</strong><br>
+<strong>A:</strong> Managing startup items, services, boot options, and tools.</p>
+<hr>
+<h3 id="%E2%9C%85-task-2-system-configuration">✅ <em><strong>Task 2: System Configuration</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>System Configuration</strong></em> (<code>msconfig</code>) is a tool used to troubleshoot and manage startup settings, services, and system behavior.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to open System Configuration?</strong><br>
+<strong>A:</strong> Run <code>msconfig</code></p>
+<p><strong>Q2: Which tab controls startup items in <code>msconfig</code>?</strong><br>
+<strong>A:</strong> <code>Startup</code> tab (redirects to Task Manager in modern versions)</p>
+<p><strong>Q3: What is Safe Boot in Boot tab?</strong><br>
+<strong>A:</strong> Minimal startup environment for troubleshooting.</p>
+<p><strong>Q4: How do you enable diagnostic startup?</strong><br>
+<strong>A:</strong> In <code>General</code> tab, select “Diagnostic startup”</p>
+<p><strong>Q5: Which tab gives access to advanced tools?</strong><br>
+<strong>A:</strong> <code>Tools</code> tab</p>
+<hr>
+<h3 id="%E2%9C%85-task-3-change-uac-settings">✅ <em><strong>Task 3: Change UAC Settings</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>User Account Control</strong></em> settings determine when W<em>indows prompts the user for elevation of privileges.</em></p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: Command to open UAC settings?</strong><br>
+<strong>A:</strong> <code>UserAccountControlSettings.exe</code></p>
+<p><strong>Q2: How many UAC levels are available?</strong><br>
+<strong>A:</strong> Four levels ranging from “Always notify” to “Never notify”</p>
+<p><strong>Q3: Can standard users change UAC settings?</strong><br>
+<strong>A:</strong> No, admin privileges are required.</p>
+<p><strong>Q4: Which registry key stores UAC config?</strong><br>
+<strong>A:</strong> <code>HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System</code></p>
+<p><strong>Q5: What does UAC protect against?</strong><br>
+<strong>A:</strong> Unauthorized changes by users or software.</p>
+<hr>
+<h3 id="%E2%9C%85-task-4-computer-management">✅ <em><strong>Task 4: Computer Management</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Computer Management</strong></em> combines several <em>administrative tools like Disk Management, Event Viewer, Services, and Device Manager.</em></p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: Command to open Computer Management?</strong><br>
+<strong>A:</strong> <code>compmgmt.msc</code></p>
+<p><strong>Q2: How to view disk partitions?</strong><br>
+<strong>A:</strong> Use Disk Management inside Computer Management.</p>
+<p><strong>Q3: Which tool shows system logs and errors?</strong><br>
+<strong>A:</strong> Event Viewer</p>
+<p><strong>Q4: How to manage services using GUI?</strong><br>
+<strong>A:</strong> <code>services.msc</code></p>
+<p><strong>Q5: How to disable a hardware device?</strong><br>
+<strong>A:</strong> Via Device Manager &gt; Right-click device &gt; Disable</p>
+<hr>
+<h3 id="%E2%9C%85-task-5-system-information">✅ <em><strong>Task 5: System Information</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>System Information</strong></em> (<code>msinfo32</code>) provides a detailed <em>overview of the hardware, drivers, and software environment of the system.</em></p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to open System Information tool?</strong><br>
+<strong>A:</strong> <code>msinfo32</code></p>
+<p><strong>Q2: Which section lists installed drivers?</strong><br>
+<strong>A:</strong> “Software Environment &gt; System Drivers”</p>
+<p><strong>Q3: Can you export system info?</strong><br>
+<strong>A:</strong> Yes, File &gt; Export</p>
+<p><strong>Q4: What tab shows BIOS version?</strong><br>
+<strong>A:</strong> System Summary</p>
+<p><strong>Q5: How to find total RAM installed?</strong><br>
+<strong>A:</strong> Under System Summary &gt; Installed Physical Memory</p>
+<hr>
+<h3 id="%E2%9C%85-task-6-resource-monitor">✅ <em><strong>Task 6: Resource Monitor</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Resource Monitor</strong></em>  (<code>resmon</code>) is used to <em>monitor CPU, memory, disk, and network usage in real-time.</em></p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to launch Resource Monitor?</strong><br>
+<strong>A:</strong> Run <code>resmon</code> or open via Task Manager &gt; Performance tab &gt; Open Resource Monitor</p>
+<p><strong>Q2: What graphs does it show?</strong><br>
+<strong>A:</strong> CPU, Memory, Disk, Network usage</p>
+<p><strong>Q3: Can you end processes in Resource Monitor?</strong><br>
+<strong>A:</strong> Yes, right-click &gt; End Process</p>
+<p><strong>Q4: How to analyze disk activity?</strong><br>
+<strong>A:</strong> Use Disk tab in Resource Monitor</p>
+<p><strong>Q5: What does “Hard Faults/sec” indicate?</strong><br>
+<strong>A:</strong> Virtual memory usage due to insufficient RAM</p>
+<hr>
+<h3 id="%E2%9C%85-task-7-command-prompt">✅ <em><strong>Task 7: Command Prompt</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Command Prompt</strong></em> (<code>cmd.exe</code>) is a <em>command-line interface</em> used to execute system commands and scripts.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to open CMD as administrator?</strong><br>
+<strong>A:</strong> Right-click on CMD &gt; Run as administrator</p>
+<p><strong>Q2: Command to list all files in a directory?</strong><br>
+<strong>A:</strong> <code>dir</code></p>
+<p><strong>Q3: Command to check system IP?</strong><br>
+<strong>A:</strong> <code>ipconfig</code></p>
+<p><strong>Q4: Command to list running processes?</strong><br>
+<strong>A:</strong> <code>tasklist</code></p>
+<p><strong>Q5: Command to shut down PC immediately?</strong><br>
+<strong>A:</strong> <code>shutdown /s /t 0</code></p>
+<hr>
+<h3 id="%E2%9C%85-task-8-registry-editor">✅ <em><strong>Task 8: Registry Editor</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Registry Editor</strong></em> (<code>regedit</code>) is a <em>tool to view and edit the Windows registry.</em></p>
+</blockquote>
+<ul>
+<li>A hierarchical database that stores system and user configurations.</li>
+</ul>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to launch Registry Editor?</strong><br>
+<strong>A:</strong> Run <code>regedit</code></p>
+<p><strong>Q2: What key stores startup programs?</strong><br>
+<strong>A:</strong> <code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run</code></p>
+<p><strong>Q3: How to back up a registry key?</strong><br>
+<strong>A:</strong> Right-click key &gt; Export</p>
+<p><strong>Q4: Can editing the registry harm the system?</strong><br>
+<strong>A:</strong> Yes, incorrect edits can cause instability or failure.</p>
+<p><strong>Q5: Which key contains system policies?</strong><br>
+<strong>A:</strong> <code>HKLM\Software\Policies</code></p>
+<hr>
+<hr>
+<blockquote>
+<h2 id="%F0%9F%93%9D-windows-fundamentals-3-%E2%80%93-tasks-1-to-9-complete-lab">📝 <em><strong>Windows Fundamentals 3 – Tasks 1 to 9 (Complete Lab)</strong></em></h2>
+</blockquote>
+<hr>
+<h3 id="%E2%9C%85-task-1-introduction">✅ <em><strong>Task 1: Introduction</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Windows Fundamentals 3</strong></em> focuses on <em>security features</em> such as antivirus, firewall, BitLocker, device protection, and backup systems.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: What does Windows Security offer?</strong><br>
+<strong>A:</strong> Antivirus, firewall, device protection, and app control.</p>
+<p><strong>Q2: What is BitLocker?</strong><br>
+<strong>A:</strong> A disk encryption feature to protect data on drives.</p>
+<p><strong>Q3: How to access Windows Security Center?</strong><br>
+<strong>A:</strong> <code>Settings &gt; Update &amp; Security &gt; Windows Security</code></p>
+<p><strong>Q4: What is VSS used for?</strong><br>
+<strong>A:</strong> Volume Shadow Copy Service is used to create backup snapshots.</p>
+<p><strong>Q5: Can you enable firewall per network type?</strong><br>
+<strong>A:</strong> Yes – Private, Public, and Domain profiles.</p>
+<hr>
+<h3 id="%E2%9C%85-task-2-windows-updates">✅ <em><strong>Task 2: Windows Updates</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Windows Update</strong></em> is responsible for keeping the <em>system secure and up-to-date</em> with patches, drivers, and feature updates.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to manually check for updates?</strong><br>
+<strong>A:</strong> <code>Settings &gt; Update &amp; Security &gt; Windows Update</code></p>
+<p><strong>Q2: Command to check updates via CMD?</strong><br>
+<strong>A:</strong> <code>wuauclt /detectnow</code></p>
+<p><strong>Q3: How to view update history?</strong><br>
+<strong>A:</strong> <code>Settings &gt; Update History</code></p>
+<p><strong>Q4: Can updates be paused?</strong><br>
+<strong>A:</strong> Yes, from the Update settings.</p>
+<p><strong>Q5: How to roll back a Windows update?</strong><br>
+<strong>A:</strong> <code>Settings &gt; Recovery &gt; Go back to previous version</code></p>
+<hr>
+<h3 id="%E2%9C%85-task-3-windows-security">✅ <em><strong>Task 3: Windows Security</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Windows Security</strong></em> is the <em>built-in antivirus</em> and threat protection suite in Windows that monitors viruses, ransomware, and other malware threats in real-time.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How do you open Windows Security?</strong><br>
+<strong>A:</strong> Go to <code>Settings &gt; Privacy &amp; Security &gt; Windows Security</code> or run <code>windowsdefender:</code> in the Run dialog.</p>
+<p><strong>Q2: What areas are protected by Windows Security?</strong><br>
+<strong>A:</strong> Virus &amp; threat protection, firewall, app control, device security, and more.</p>
+<p><strong>Q3: Can you perform a quick scan from Windows Security?</strong><br>
+<strong>A:</strong> Yes, under “Virus &amp; Threat Protection” &gt; Quick scan.</p>
+<p><strong>Q4: What is Real-time Protection?</strong><br>
+<strong>A:</strong> It actively scans files and programs as they are accessed.</p>
+<p><strong>Q5: Where can you manage notifications?</strong><br>
+<strong>A:</strong> Inside Windows Security settings under Notification preferences.</p>
+<hr>
+<h3 id="%E2%9C%85-task-4-virus--threat-protection">✅ <em><strong>Task 4: Virus &amp; Threat Protection</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p>This section of <em><strong>Windows Security</strong></em> <em>focuses on scanning, quarantining, and removing malicious threats from the system</em>.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: What scan types are available?</strong><br>
+<strong>A:</strong> Quick, Full, Custom, and Microsoft Defender Offline scan.</p>
+<p><strong>Q2: What happens to quarantined files?</strong><br>
+<strong>A:</strong> They are isolated from the system and can be reviewed or deleted later.</p>
+<p><strong>Q3: How to view scan history?</strong><br>
+<strong>A:</strong> Go to Virus &amp; threat protection &gt; Protection history.</p>
+<p><strong>Q4: What is Microsoft Defender Offline scan?</strong><br>
+<strong>A:</strong> A deep scan that runs before Windows boots.</p>
+<p><strong>Q5: Command-line version of Defender scan?</strong><br>
+<strong>A:</strong> <code>MpCmdRun.exe -Scan -ScanType 1</code></p>
+<hr>
+<h3 id="%E2%9C%85-task-5-firewall--network-protection">✅ <em><strong>Task 5: Firewall &amp; Network Protection</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p>The <em><strong>Windows Firewall</strong></em> helps prevent unauthorized access to or from a private or public network.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to access firewall settings?</strong><br>
+<strong>A:</strong> Go to Windows Security &gt; Firewall &amp; network protection</p>
+<p><strong>Q2: What types of network profiles are available?</strong><br>
+<strong>A:</strong> Domain, Private, and Public</p>
+<p><strong>Q3: How to allow an app through the firewall?</strong><br>
+<strong>A:</strong> Firewall &amp; Network Protection &gt; Allow an app through firewall</p>
+<p><strong>Q4: How to disable firewall for a specific network type?</strong><br>
+<strong>A:</strong> Select the network type and turn off Microsoft Defender Firewall.</p>
+<p><strong>Q5: What is the command to reset firewall settings?</strong><br>
+<strong>A:</strong> <code>netsh advfirewall reset</code></p>
+<hr>
+<h3 id="%E2%9C%85-task-6-app--browser-control">✅ <em><strong>Task 6: App &amp; Browser Control</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p>This feature <em><strong>manages app</strong></em> reputation-based protection and SmartScreen settings for safer browsing and app usage.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: What is Microsoft Defender SmartScreen?</strong><br>
+<strong>A:</strong> It helps protect your device by warning about malicious websites and downloads.</p>
+<p><strong>Q2: Where can you manage app reputation settings?</strong><br>
+<strong>A:</strong> App &amp; browser control &gt; Reputation-based protection</p>
+<p><strong>Q3: Can you block potentially unwanted apps (PUAs)?</strong><br>
+<strong>A:</strong> Yes, via Reputation-based protection settings.</p>
+<p><strong>Q4: What does Exploit protection do?</strong><br>
+<strong>A:</strong> Helps guard against malware attacks through system vulnerabilities.</p>
+<p><strong>Q5: How to disable SmartScreen temporarily?</strong><br>
+<strong>A:</strong> App &amp; browser control &gt; Turn off all toggles under SmartScreen</p>
+<hr>
+<h3 id="%E2%9C%85-task-7-device-security">✅ <em><strong>Task 7: Device Security</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>Device security</strong></em> provides <em>hardware-level security features</em> like Core Isolation and Secure Boot to protect the OS from rootkits and unauthorized access.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: What is Core Isolation?</strong><br>
+<strong>A:</strong> A virtualization-based security feature that isolates critical parts of the OS.</p>
+<p><strong>Q2: What is Secure Boot?</strong><br>
+<strong>A:</strong> Ensures the system boots only with software trusted by the OEM.</p>
+<p><strong>Q3: How to check if Core Isolation is enabled?</strong><br>
+<strong>A:</strong> Go to Windows Security &gt; Device Security &gt; Core Isolation Details</p>
+<p><strong>Q4: What does TPM do?</strong><br>
+<strong>A:</strong> Trusted Platform Module stores cryptographic keys and ensures integrity.</p>
+<p><strong>Q5: How to check TPM availability?</strong><br>
+<strong>A:</strong> Run <code>tpm.msc</code></p>
+<hr>
+<h3 id="%E2%9C%85-task-8-bitlocker">✅ <em><strong>Task 8: BitLocker</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>BitLocker</strong></em> is a <em>drive encryption feature</em> that helps protect data by encrypting entire volumes.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: How to enable BitLocker?</strong><br>
+<strong>A:</strong> Control Panel &gt; BitLocker Drive Encryption</p>
+<p><strong>Q2: Which Windows editions support BitLocker?</strong><br>
+<strong>A:</strong> Windows Pro, Enterprise, and Education</p>
+<p><strong>Q3: How to back up your BitLocker recovery key?</strong><br>
+<strong>A:</strong> During setup or via Control Panel &gt; Save to file/USB/Account</p>
+<p><strong>Q4: Command-line to manage BitLocker?</strong><br>
+<strong>A:</strong> <code>manage-bde</code></p>
+<p><strong>Q5: How to check BitLocker status?</strong><br>
+<strong>A:</strong> <code>manage-bde -status</code></p>
+<hr>
+<h3 id="%E2%9C%85-task-9-volume-shadow-copy-service-vss">✅ <em><strong>Task 9: Volume Shadow Copy Service (VSS)</strong></em></h3>
+<p><strong><em>Definition</em>:</strong></p>
+<blockquote>
+<p><em><strong>VSS</strong></em> enables taking <em>backup snapshots</em> of system or user data even while the system is running.</p>
+</blockquote>
+<p>📚 <em><strong>Practice Questions &amp; Answers:</strong></em></p>
+<p><strong>Q1: What is the primary use of VSS?</strong><br>
+<strong>A:</strong> To create system restore points and backups without disrupting operations.</p>
+<p><strong>Q2: What tool uses VSS to create restore points?</strong><br>
+<strong>A:</strong> System Restore and Backup utilities</p>
+<p><strong>Q3: How to open System Restore settings?</strong><br>
+<strong>A:</strong> Control Panel &gt; Recovery &gt; Configure System Restore</p>
+<p><strong>Q4: What is the command to create a restore point?</strong><br>
+<strong>A:</strong> Use <code>wmic.exe</code> or PowerShell commands for scripting restore points.</p>
+<p><strong>Q5: What happens if VSS fails during backup?</strong><br>
+<strong>A:</strong> The backup may fail or be incomplete.</p>
+
+</body>
+</html>
